@@ -3,7 +3,7 @@
 import React, { useState, useContext } from "react";
 import DashboardLayout from "../../components/layouts/DashboardLayout";
 import { useUserAuth } from "../../hooks/useUserAuth";
-import { UserContext } from "../../context/userContext";
+import { UserContext } from "../../context/UserContext";
 import Input from "../../components/layouts/Inputs/Input";
 import ProfilePhotoSelector from "../../components/layouts/Inputs/ProfilePhotoSelector";
 import uploadImage from "../../utils/uploadImage";
