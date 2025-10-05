@@ -38,17 +38,18 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 // (like /income or /profile), it will send them the main HTML file of your React app.
 // React Router will then take over and show the correct page.
 if (process.env.NODE_ENV === "production") {
-  // Correct path to your frontend build folder
-  const frontendPath = path.join(__dirname, "../frontend.Dinero/dist");
+  const frontendPath = path.join(__dirname, "../frontend/Dinero/dist");
 
-  // Serve static files from the frontend
+  // Serve static files
   app.use(express.static(frontendPath));
 
-  // For any GET request that doesn't match an API route, send the index.html file
-  app.get("*", (req, res) => {
+  // Catch-all route
+  app.use((req, res) => {
     res.sendFile(path.join(frontendPath, "index.html"));
   });
 }
+
+
 // --- END DEPLOYMENT ---
 
 const PORT = process.env.PORT || 5000;
