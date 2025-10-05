@@ -49,6 +49,9 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the Dinero Backend API!");
+});
 
 // --- END DEPLOYMENT ---
 
